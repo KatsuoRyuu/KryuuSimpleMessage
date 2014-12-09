@@ -15,7 +15,7 @@ class FlashMessengerHelper extends AbstractHelper implements ServiceLocatorAware
 		);
 		if ($output == TRUE)
 		{
-			return $this->getView()->render('partial/messages/view', array('flashMessenger' => $this->getMessenger()));
+			return $this->allMessages();
 		}
 		return $this;
     }
@@ -60,7 +60,22 @@ class FlashMessengerHelper extends AbstractHelper implements ServiceLocatorAware
 			$this->getView()->render('partial/messages/default/message', array('messenger' => $this->getMessenger())).
 			$this->getView()->render('partial/messages/default/foot', array('data' =>$data));
 	}
-	
+    
+    public function getByNamespace($namespace,$data=array())
+    {
+        return $this->getView()->render('partial/messages/namespace/head', array('data' =>$data)).
+			$this->getView()->render('partial/messages/namespace/message', array('messenger' => $this->getMessenger(), 'namespace' => $namespace)).
+            $this->getView()->render('partial/messages/namespace/foot', array('data' =>$data));
+    }
+    
+    private function allMessages($data=array())
+    {
+        return $this->getView()->render('partial/messages/all/head', array('data' =>$data)).
+			$this->getView()->render('partial/messages/all/message', array('messenger' => $this->getMessenger())).		
+            $this->getView()->render('partial/messages/all/foot', array('data' =>$data));
+
+    }
+    	
 	private function setMessenger($messenger)
 	{
 		$this->messenger = $messenger;

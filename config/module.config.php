@@ -65,6 +65,14 @@ return array(
 			'partial/messages/default/head'		=> __DIR__ . '/../view/kryuu-simple-message/partial/messages/default/head.phtml',
             'partial/messages/default/message'	=> __DIR__ . '/../view/kryuu-simple-message/partial/messages/default/message.phtml',
             'partial/messages/default/foot'		=> __DIR__ . '/../view/kryuu-simple-message/partial/messages/default/foot.phtml',
+			            
+			'partial/messages/all/head'         => __DIR__ . '/../view/kryuu-simple-message/partial/messages/all/head.phtml',
+            'partial/messages/all/message'      => __DIR__ . '/../view/kryuu-simple-message/partial/messages/all/message.phtml',
+            'partial/messages/all/foot'         => __DIR__ . '/../view/kryuu-simple-message/partial/messages/all/foot.phtml',
+			            
+			'partial/messages/namespace/head'   => __DIR__ . '/../view/kryuu-simple-message/partial/messages/namespace/head.phtml',
+            'partial/messages/namespace/message'=> __DIR__ . '/../view/kryuu-simple-message/partial/messages/namespace/message.phtml',
+            'partial/messages/namespace/foot'   => __DIR__ . '/../view/kryuu-simple-message/partial/messages/namespace/foot.phtml',
         ),
     ),
     'view_helpers' => array(
