@@ -34,4 +34,19 @@ class Module
             ),
         );
     }
+    
+    public function getViewHelperConfig() 
+    {
+        return array(
+            'factories' => array(
+                'messenger' => function($serviceManager) {
+                    $config = $serviceManager->getServiceLocator()->get('config');
+                    $helper = new View\Helper\FlashMessengerHelper();
+                    $helper->setConfig($config['KryuuSimpleMessage']);
+                    
+                    return $helper;
+                }
+            )
+        );
+    }
 }

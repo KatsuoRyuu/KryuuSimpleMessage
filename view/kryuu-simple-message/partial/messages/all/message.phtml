@@ -1,11 +1,27 @@
 <?php
-	print_r( $messenger->getMessages() );
-	echo '<br />';
-	print_r( $messenger->getInfoMessages() );
-	echo '<br />';
-	print_r( $messenger->getSuccessMessages() );
-	echo '<br />';
-	print_r( $messenger->getWarningMessages() );
-	echo '<br />';
-	print_r( $messenger->getErrorMessages() );
-	echo '<br />';
+
+    if ($messenger->hasMessages()) 
+    {
+        print_r( $messenger->getMessages() );
+    }
+    if ($messenger->hasInfoMessages()) 
+    {
+        print_r( $messenger->getInfoMessages() );
+    }
+    if ($messenger->hasSuccessMessages()) 
+    {
+        print_r( $messenger->getSuccessMessages() );
+    }
+    if ($messenger->hasWarningMessages()) 
+    {
+        print_r( $messenger->getWarningMessages() );
+    }    
+    if ($messenger->hasErrorMessages()) 
+    {
+        print_r( $messenger->getErrorMessages() );
+    }
+	
+	
+	
+	
+	
